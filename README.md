@@ -114,4 +114,4 @@ https://github.com/codemohitpra03/zipr-frontend
 
 ## Authors
 
-- [@octokatherine](https://www.github.com/octokatherine)
+- [@codemohitpra03](https://www.github.com/codemohitpra03)
