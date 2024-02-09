@@ -87,9 +87,6 @@ To run this project, you will need to add the following environment variables to
 
 
 
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
 
 
 ## Features
