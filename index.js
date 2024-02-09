@@ -30,7 +30,8 @@ app.use(bodyparser.urlencoded({extended : false}));
 app.use(bodyparser.json());
 
 const corsOptions = {
-    origin: true, //included origin as true
+    
+    origin: ['http://localhost:5173'], //included origin as true
     credentials: true, //included credentials as true
 };
 

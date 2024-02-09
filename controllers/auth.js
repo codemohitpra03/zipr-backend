@@ -37,7 +37,11 @@ const handleLogin = async (req, res) => {
     const token = jwt.sign(payload,db.JWT_SECRET,{expiresIn:"1d"})
     console.log(token);
     
-    res.cookie('access_token', token, {httpOnly: false,secure: false});
+    res.cookie('access_token', token, {
+        
+        httpOnly: false,secure: true,
+        
+    });
     
     
     return res.status(200)
