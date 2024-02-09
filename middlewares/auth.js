@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const authorization = (req, res, next) => {
+const authorization = async(req, res, next) => {
     
     const token = req.cookies.access_token;
     console.log(token,"token");
@@ -7,7 +7,7 @@ const authorization = (req, res, next) => {
       return res.json({status:403, message:"Unauthorized"})
     }
     try {
-      const data = jwt.verify(token, process.env.JWT_SECRET);
+      const data = await jwt.verify(token, process.env.JWT_SECRET);
       
       console.log(data);
       req.email = data.email;

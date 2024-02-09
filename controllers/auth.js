@@ -37,9 +37,14 @@ const handleLogin = async (req, res) => {
     const token = jwt.sign(payload,db.JWT_SECRET,{expiresIn:"1d"})
     console.log(token);
     
-    res.cookie('access_token', token);
+    res.cookie('access_token', token,{
+        httpOnly: true,
+      secure: true, // not https yet, so comment this out for now
+      sameSite: "none",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    });
     
-    
+    // res.setHeader("Set-Cookie", "access_token="+token);
     return res.status(200)
     .json({status:200, message: "Logged in successfully" ,email: user.email});
 
@@ -97,8 +102,10 @@ const handleLogout = (req, res) => {
     //     if (err) { return next(err); }
     //     res.redirect('/login');
     // })
+    console.log(req.cookies);
     return res
-    .clearCookie("access_token")
+    .clearCookie("access_token",{sameSite: "none",
+    secure: true})
     .status(200)
     .json({ message: "Successfully logged out 😏 🍀" });
 }

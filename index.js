@@ -35,7 +35,7 @@ const corsOptions = {
     credentials: true, //included credentials as true
 };
 
-app.use(cors(corsOptions));
+app.use("*",cors(corsOptions));
 
 
 
