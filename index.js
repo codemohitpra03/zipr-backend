@@ -31,7 +31,7 @@ app.use(bodyparser.json());
 
 const corsOptions = {
     
-    origin: ['http://localhost:5173'], //included origin as true
+    origin: ['https://urlshortner-mohit-kanojia-2103-anchor.netlify.app'], //included origin as true
     credentials: true, //included credentials as true
 };
 
