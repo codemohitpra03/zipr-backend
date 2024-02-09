@@ -111,3 +111,7 @@ Takes two numbers and returns the sum.
 
 ## Client Side Source
 https://github.com/codemohitpra03/zipr-frontend
+
+## Authors
+
+- [@octokatherine](https://www.github.com/octokatherine)
