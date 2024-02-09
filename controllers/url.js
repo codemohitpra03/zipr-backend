@@ -13,6 +13,7 @@ async function handleGenerateNewShortURL(req,res){
         redirectUrl:body.url,
         visitHistory:[]
     })
+    
     console.log(url);
     return res.json({
         url
@@ -22,7 +23,7 @@ async function handleGenerateNewShortURL(req,res){
 async function handleGetAnalytics(req,res){
     const shortID = req.params.shortId
     const url = await URL.findOne({shortId:shortID})
-    
+    console.log(url);
     if(!url){
         return res.status(404).json({message:"URL not found"})
     }
